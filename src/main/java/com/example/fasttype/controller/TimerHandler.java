@@ -17,7 +17,8 @@ import javafx.util.Duration;
  * @author Lesly Zapata
  * @version 1.0
  */
-public class TimerHandler {
+
+public class    TimerHandler {
 
     /** The JavaFX timeline that fires every second. */
     private Timeline timeline;
@@ -42,6 +43,7 @@ public class TimerHandler {
      * @param gameView  the view to refresh each second
      * @param onTimeUp  a callback executed when the timer reaches zero
      */
+
     public TimerHandler(GameState gameState, GameView gameView, Runnable onTimeUp) {
         this.gameState = gameState;
         this.gameView = gameView;
@@ -61,6 +63,7 @@ public class TimerHandler {
      * <p>Implemented as a named inner class to satisfy the course requirement
      * of using inner classes for event handling modularization.</p>
      */
+
     private class TickHandler implements javafx.event.EventHandler<javafx.event.ActionEvent> {
 
         /**
@@ -69,6 +72,7 @@ public class TimerHandler {
          *
          * @param event the action event fired by the timeline (unused directly)
          */
+
         @Override
         public void handle(javafx.event.ActionEvent event) {
             gameState.tickTimer();
@@ -91,6 +95,7 @@ public class TimerHandler {
     /**
      * Starts (or restarts) the countdown timer from the current remaining time.
      */
+
     public void start() {
         stop();
         buildTimeline();
@@ -100,6 +105,7 @@ public class TimerHandler {
     /**
      * Stops the countdown timer without resetting the model state.
      */
+
     public void stop() {
         if (timeline != null) {
             timeline.stop();
@@ -114,6 +120,7 @@ public class TimerHandler {
      * Builds the JavaFX {@link Timeline} with a one-second {@link KeyFrame}
      * that repeats indefinitely, using the inner {@link TickHandler}.
      */
+
     private void buildTimeline() {
         TickHandler handler = new TickHandler();
         KeyFrame frame = new KeyFrame(Duration.seconds(1), handler);

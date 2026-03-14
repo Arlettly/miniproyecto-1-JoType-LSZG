@@ -16,6 +16,7 @@ import java.io.IOException;
  * @author Lesly Zapata
  * @version 1.0
  */
+
 public class GameStage extends Stage {
 
     /**
@@ -24,21 +25,30 @@ public class GameStage extends Stage {
      *
      * @throws IOException if the FXML resource cannot be found or loaded
      */
+
     public GameStage() throws IOException {
+        // Import the View
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("/com/example/fasttype/VocabularyGame.fxml")
         );
 
+        // Create the Parent
         Parent root = loader.load();
+        // Create a new Scene
         Scene scene = new Scene(root);
 
+        // Add a title to the Stage
         setTitle("JoType – Escritura Rápida");
+        // Set the Stage to be resizable
         setResizable(false);
+        // Add the Scene to the Stage
         setScene(scene);
+        // Add the icon to the Stage
         getIcons().add(
                 new Image(
                         String.valueOf(getClass().getResource(
                                 "/com/example/fasttype/image/PinkHeart.png"))));
+        // We put on a Show on Stage
         show();
     }
 }
