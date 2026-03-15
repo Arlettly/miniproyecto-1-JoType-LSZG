@@ -42,7 +42,7 @@ public class WelcomeStage {
         // Create a new Scene
         Scene scene = new Scene(root, 320, 500);
         // Add a title to the Stage
-        primaryStage.setTitle("Escritura Rápida");
+        primaryStage.setTitle("JoType – Escritura Rápida");
         // Set the Stage to be resizable
         primaryStage.setResizable(false);
         // Add the Scene to the Stage

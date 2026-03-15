@@ -8,50 +8,74 @@ package com.example.fasttype.model;
  * @author Lesly Zapata
  * @version 1.0
  */
-public class GameState {
+public class GameState implements Resettable,Validatable, LevelProgressable {
 
     // -------------------------------------------------------------------------
     // Constants
     // -------------------------------------------------------------------------
 
-    /** Initial time limit per level, in seconds. */
+    /**
+     * Initial time limit per level, in seconds.
+     */
     public static final int INITIAL_TIME_SECONDS = 20;
 
-    /** Minimum possible time limit per level, in seconds. */
+    /**
+     * Minimum possible time limit per level, in seconds.
+     */
     public static final int MIN_TIME_SECONDS = 2;
 
-    /** Number of levels between each time reduction. */
+    /**
+     * Number of levels between each time reduction.
+     */
     public static final int LEVELS_PER_TIME_REDUCTION = 5;
 
-    /** Amount by which time is reduced every threshold, in seconds. */
+    /**
+     * Amount by which time is reduced every threshold, in seconds.
+     */
     public static final int TIME_REDUCTION_AMOUNT = 2;
 
-    /** Maximum level a player can reach (win condition). */
+    /**
+     * Maximum level a player can reach (win condition).
+     */
     public static final int MAX_LEVEL = 45;
 
     // -------------------------------------------------------------------------
     // State Fields
     // -------------------------------------------------------------------------
 
-    /** Current level number (starts at 1). */
+    /**
+     * Current level number (starts at 1).
+     */
     private int currentLevel;
 
-    /** Total accumulated score. */
+    /**
+     * Total accumulated score.
+     */
     private int score;
 
-    /** Remaining time for the current level, in seconds. */
+    /**
+     * Remaining time for the current level, in seconds.
+     */
     private int remainingTime;
 
-    /** Maximum time allowed for the current level, in seconds. */
+    /**
+     * Maximum time allowed for the current level, in seconds.
+     */
     private int currentMaxTime;
 
-    /** The word or phrase the player must type in the current level. */
+    /**
+     * The word or phrase the player must type in the current level.
+     */
     private String currentWord;
 
-    /** Whether the game is currently active (not over). */
+    /**
+     * Whether the game is currently active (not over).
+     */
     private boolean gameActive;
 
-    /** Source of words/phrases for the game. */
+    /**
+     * Source of words/phrases for the game.
+     */
     private final WordBank wordBank;
 
     // -------------------------------------------------------------------------
@@ -63,17 +87,18 @@ public class GameState {
      */
     public GameState() {
         wordBank = new WordBank();
-        resetGame();
+        reset();
     }
 
     // -------------------------------------------------------------------------
-    // Public Methods
+    // Resettable
     // -------------------------------------------------------------------------
 
     /**
      * Resets the entire game back to its initial state (level 1, full time).
      */
-    public void resetGame() {
+    @Override
+    public void reset() {
         currentLevel = 1;
         score = 0;
         currentMaxTime = INITIAL_TIME_SECONDS;
@@ -83,13 +108,23 @@ public class GameState {
     }
 
     /**
+     * Convenience alias for {@link #reset()}.
+     */
+    public void resetGame() {
+        reset();
+    }
+
+    //-------------------------------------------------------------------------
+    // Validatable
+    //-------------------------------------------------------------------------
+
+    /**
      * Validates the player's typed answer against the current word.
-     * If correct, advances the level and updates score.
-     * If incorrect, ends the game.
      *
      * @param playerAnswer the text entered by the player
-     * @return {@code true} if the answer was correct, {@code false} otherwise
+     * @return {@code true} if the answer was correct.
      */
+    @Override
     public boolean submitAnswer(String playerAnswer) {
         if (!gameActive) return false;
 
@@ -105,12 +140,12 @@ public class GameState {
     }
 
     /**
-     * Called when the timer reaches zero.
-     * Validates the current answer (if any) and ends the game if incorrect.
+     * Validates the player's answer when the timer expires.
      *
      * @param playerAnswer the text currently in the input field
      * @return {@code true} if the answer was correct before time ran out
      */
+    @Override
     public boolean timeUp(String playerAnswer) {
         if (!gameActive) return false;
 
@@ -125,30 +160,43 @@ public class GameState {
         return correct;
     }
 
+    //-------------------------------------------------------------------------
+    // LevelProgressable
+    //-------------------------------------------------------------------------
+
     /**
-     * Decrements the remaining time by one second.
-     * Has no effect if the game is not active.
+     * Returns the current level number.
+     *
+     * @return current level
      */
-    public void tickTimer() {
-        if (gameActive && remainingTime > 0) {
-            remainingTime--;
-        }
+    public int getCurrentLevel() {
+        return currentLevel;
     }
 
     /**
-     * Checks whether the timer has reached zero.
+     * Returns the player's accumulated score.
      *
-     * @return {@code true} if remaining time is zero or less
+     * @return total score
      */
-    public boolean isTimeUp() {
-        return remainingTime <= 0;
+    @Override
+    public int getScore() {
+        return score;
     }
+
+    /**
+     * Returns whether the game is still active.
+     *
+     * @return {@code true} if the game has not ended
+     */
+    @Override
+    public boolean isGameActive(){return gameActive;}
 
     /**
      * Checks whether the player has won by reaching the maximum level.
      *
      * @return {@code true} if the current level exceeds the maximum
      */
+    @Override
     public boolean isWon() {
         return currentLevel > MAX_LEVEL;
     }
@@ -182,48 +230,53 @@ public class GameState {
     }
 
     // -------------------------------------------------------------------------
-    // Getters
+    // Extra Getters
     // -------------------------------------------------------------------------
-
-    /**
-     * Returns the current level number.
-     *
-     * @return current level
-     */
-    public int getCurrentLevel() { return currentLevel; }
-
-    /**
-     * Returns the player's accumulated score.
-     *
-     * @return total score
-     */
-    public int getScore() { return score; }
 
     /**
      * Returns the remaining seconds in the current level.
      *
      * @return remaining time in seconds
      */
-    public int getRemainingTime() { return remainingTime; }
+    public int getRemainingTime() {
+        return remainingTime;
+    }
 
     /**
      * Returns the maximum time allowed for the current level.
      *
      * @return max time in seconds for this level
      */
-    public int getCurrentMaxTime() { return currentMaxTime; }
+    public int getCurrentMaxTime() {
+        return currentMaxTime;
+    }
 
     /**
      * Returns the word or phrase the player must type.
      *
      * @return current target word/phrase
      */
-    public String getCurrentWord() { return currentWord; }
+    public String getCurrentWord() {
+        return currentWord;
+    }
 
     /**
-     * Returns whether the game is still active.
-     *
-     * @return {@code true} if the game has not ended
+     * Decrements the remaining time by one second.
+     * Has no effect if the game is not active.
      */
-    public boolean isGameActive() { return gameActive; }
+    public void tickTimer() {
+        if (gameActive && remainingTime > 0) {
+            remainingTime--;
+        }
+    }
+
+    /**
+     * Checks whether the timer has reached zero.
+     *
+     * @return {@code true} if remaining time is zero or less
+     */
+    public boolean isTimeUp() {
+        return remainingTime <= 0;
+    }
+
 }
