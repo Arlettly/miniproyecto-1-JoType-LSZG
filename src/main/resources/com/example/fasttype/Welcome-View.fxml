@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<StackPane prefHeight="500.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fasttype.controller.WelcomeController">
+
+    <!-- Fondo rosa claro -->
+    <StackPane mouseTransparent="true" prefHeight="500" prefWidth="320" style="-fx-background-color: #F5EAEA;">
+
+        <!-- Estrellas decorativas -->
+        <Label mouseTransparent="true" style="-fx-font-size: 80px; -fx-text-fill: #ECC8C8; -fx-opacity: 0.55;" text="✦" translateX="5" translateY="30" StackPane.alignment="TOP_LEFT" />
+        <Label mouseTransparent="true" style="-fx-font-size: 60px; -fx-text-fill: #ECC8C8; -fx-opacity: 0.45;" text="✦" translateX="-15" translateY="-50" StackPane.alignment="BOTTOM_RIGHT" />
+
+        <!-- Grid de puntos decorativos -->
+        <VBox alignment="TOP_LEFT" mouseTransparent="true" prefHeight="500" prefWidth="320" spacing="22" style="-fx-padding: 12 12 12 12;">
+            <HBox spacing="22"><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /></HBox>
+            <HBox spacing="22"><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /></HBox>
+            <HBox spacing="22"><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /></HBox>
+            <HBox spacing="22"><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /></HBox>
+            <HBox spacing="22"><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /></HBox>
+            <HBox spacing="22"><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /></HBox>
+            <HBox spacing="22"><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /></HBox>
+            <HBox spacing="22"><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /><Label style="-fx-text-fill:#E0BCBC;-fx-font-size:9px;" text="•" /></HBox>
+        </VBox>
+    </StackPane>
+
+    <!-- ═══════════════════════════════════════
+         CONTENIDO PRINCIPAL
+         ═══════════════════════════════════════ -->
+    <VBox alignment="TOP_CENTER" prefHeight="500" prefWidth="320" spacing="0">
+        <padding>
+            <Insets bottom="10" left="20" right="20" top="22" />
+        </padding>
+
+        <!-- Título "Escritura" rojo -->
+        <Label style="-fx-font-size: 54px; -fx-font-weight: bold; -fx-text-fill: #CC0000; -fx-font-family: 'Gloucester MT Extra Condensed';" text="Escritura" />
+
+        <!-- Título "Rápida" rosa -->
+        <Label style="-fx-font-size: 50px; -fx-font-weight: bold; -fx-text-fill: #FF8FAB; -fx-font-family: 'Gloucester MT Extra Condensed'; -fx-padding: -10 0 0 0;" text="Rápida" />
+
+        <!-- Subtítulo -->
+        <Label alignment="CENTER" prefWidth="260" style="-fx-font-size: 13px; -fx-text-fill: #555555;                       -fx-font-family: 'Georgia'; -fx-padding: 6 0 0 0;" text="¡Mejora tu velocidad!" textAlignment="CENTER" wrapText="true" />
+
+        <!-- Círculo con Hello Kitty -->
+        <StackPane prefHeight="200" prefWidth="280">
+            <VBox.margin><Insets top="8" /></VBox.margin>
+
+            <!-- Imagen Hello Kitty (cargada desde WelcomeController) -->
+            <ImageView fx:id="characterImage" fitHeight="180" fitWidth="180" preserveRatio="true" StackPane.alignment="CENTER" />
+
+        </StackPane>
+
+        <!-- Botón ¡JUGAR! -->
+        <StackPane>
+            <VBox.margin><Insets top="14" /></VBox.margin>
+            <Rectangle arcHeight="50" arcWidth="50" fill="#8B0000" height="58" mouseTransparent="true" opacity="0.7" translateY="5" width="260" />
+            <Rectangle arcHeight="50" arcWidth="50" fill="#CC0000" height="58" width="260" />
+            <Button fx:id="playBtn" onAction="#handlePlay" style="-fx-background-color: transparent;                            -fx-font-size: 20px; -fx-font-weight: bold;                            -fx-text-fill: white; -fx-cursor: hand;                            -fx-font-family: 'Arial Black';" text="¡JUGAR!  ▶" />
+        </StackPane>
+
+        <!-- Footer -->
+        <HBox alignment="CENTER" spacing="5">
+            <VBox.margin><Insets top="16" /></VBox.margin>
+            <Label style="-fx-font-size: 12px; -fx-text-fill: #AAAAAA;                           -fx-font-family: 'Georgia';" text="Escribe rápido, piensa más rápido." />
+            <Label style="-fx-font-size: 12px; -fx-text-fill: #CC0000;" text="❤" />
+        </HBox>
+
+    </VBox>
+
+</StackPane>

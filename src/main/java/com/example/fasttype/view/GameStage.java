@@ -29,7 +29,7 @@ public class GameStage extends Stage {
     public GameStage() throws IOException {
         // Import the View
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/com/example/fasttype/VocabularyGame.fxml")
+                getClass().getResource("/com/example/fasttype/Game-View.fxml")
         );
 
         // Create the Parent

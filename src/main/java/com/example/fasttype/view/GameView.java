@@ -1,5 +1,7 @@
 package com.example.fasttype.view;
 
+import com.example.fasttype.controller.GameController;
+
 /**
  * Defines the contract for updating the game's visual interface.
  * Implemented by {@link GameController} to decouple the controller logic
