@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.example.fasttype","l":"com.example.fasttype"},{"m":"com.example.fasttype","l":"com.example.fasttype.controller"},{"m":"com.example.fasttype","l":"com.example.fasttype.model"},{"m":"com.example.fasttype","l":"com.example.fasttype.view"}];updateSearchResults();
